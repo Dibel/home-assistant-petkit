@@ -40,7 +40,7 @@ async def async_setup_entry(
             )
 
         # D4 and D4s feeders
-        if feeder_data.type in ['d4', 'd4s', 'd4sh']:
+        if feeder_data.type in ['d4', 'd4h', 'd4s', 'd4sh']:
             binary_sensors.append(
                 BatteryInstalled(coordinator, feeder_id)
             )
@@ -53,7 +53,7 @@ async def async_setup_entry(
                 ))
 
         # D4sh Feeder
-        if feeder_data.type == 'd4sh':
+        if feeder_data.type in ['d4h', 'd4sh']:
             binary_sensors.extend(
                 (
                     CameraStatus(coordinator, feeder_id),

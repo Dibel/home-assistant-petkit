@@ -77,7 +77,7 @@ async def async_setup_entry(
         ))
 
         # D3 & D4
-        if feeder_data.type in ['d3', 'd4']:
+        if feeder_data.type in ['d3', 'd4', 'd4h']:
             sensors.extend((
                 TimesDispensed(coordinator, feeder_id),
                 TotalPlanned(coordinator, feeder_id),
@@ -86,7 +86,7 @@ async def async_setup_entry(
             ))
 
         # D4 Feeder
-        if feeder_data.type == 'd4':
+        if feeder_data.type in ['d4', 'd4h']:
             sensors.append(
                 ManualDispensed(coordinator, feeder_id)
             )

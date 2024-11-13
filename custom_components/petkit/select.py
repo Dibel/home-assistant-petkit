@@ -68,7 +68,7 @@ async def async_setup_entry(
             ))
     for feeder_id, feeder_data in coordinator.data.feeders.items():
         # D4 and Mini Feeders
-        if feeder_data.type in ['d4', 'feedermini']:
+        if feeder_data.type in ['d4', 'd4h', 'feedermini']:
             selects.append(
                 ManualFeed(coordinator, feeder_id)
             )
